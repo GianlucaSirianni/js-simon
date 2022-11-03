@@ -3,6 +3,21 @@
     width: 150px;
 }
 
-#numContainer{
-    display: flex;
+
+
+.mess{
+    width: 70%;
+    margin: auto;
 }
+
+.btn{
+    margin: auto;
+}
+
+.center{
+    width: 70%;
+    margin: auto;
+    font-size: 5rem;
+    text-align: center;
+}
+

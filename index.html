@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,23 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Simon</title>
 </head>
+
 <body>
-    
-    <button onclick="start()">PLAY</button>
-    <div id="numContainer">
-        <div>
-            
-        </div>
+    <div class="mess">
+        <h1>Vuoi mettere alla prova la tua memoria?, se premi il tasto play appariranno cinque numeri, ma ATTENZIONE,
+            questi rimarranno visibili per soli 5 secondi, dopodichè toccherà a te ricordarli. sei pront*?</h1>
+            <button onclick="start()" class="btn">PLAY</button>
     </div>
+
     
+    <div id="numContainer" class="center">
+        
+    </div>
+    <div id="forgottenNum" class="center">
+        
+    </div>
+
     <script type="text/javascript" src="./assets/js/main.js"></script>
 </body>
+
 </html>

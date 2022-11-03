@@ -32,13 +32,13 @@
 // `<p>${numArray[i]}</p>`;
 
 function start() {
-    setTimeout(play, 3000);
-    document.getElementById('numContainer').innerHTML = 'Prepara la tua memoria, tra 5 secondi questi numeri spariranno, prova a ricordartene il più possibile';
+    setTimeout(play, 1500);
+    document.getElementById('numContainer').innerHTML += `<p>Preparati</p>`;
     console.log('preparati');
 
     function play() {
         setTimeout(hideNum, 5000);
-        setTimeout(askNum, 6000)
+        setTimeout(askNum, 5200)
         document.getElementById('numContainer').innerHTML = ' ';
         console.log('lets play');
         numArray = [];
@@ -67,18 +67,18 @@ function start() {
         }
 
         function askNum() {
-            for (i = 1; i < 6; i++) {
-                var input = parseInt(prompt("Inserisci il " + (i) + "° numero"))
+            for (z = 0; z < 5; z++) {
+                var input = parseInt(prompt("Inserisci il " + (z+1) + "° numero"))
                 guess.push(input);
                 console.log(guess);
             }
 
-            for (i=0; i<numArray.length; i++){
-                if ((numArray.includes(input) == true) && (numArray.length == guess.length)){
-                    document.getElementById('numContainer').innerHTML = 'Bravissim*, li hai indovinati tutti';
-                } else {
-                    document.getElementById('numContainer').innerHTML = 'ahi ahi ahi, qualcosa non va';
-                }
+            let diff = numArray.filter(x => !guess.includes(x));
+            if (diff.length !== 0){
+                document.getElementById('numContainer').innerHTML = 'peccato, mancava qualcosa!'; 
+                document.getElementById('forgottenNum').innerHTML = 'questi sono i numeri che ti sei dimenticat* ' + diff; 
+            } else {
+                document.getElementById('numContainer').innerHTML = 'Bravissim*, li hai indovinati tutti';
             }
         }
 
